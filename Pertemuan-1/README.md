@@ -45,17 +45,17 @@ Dengan demikian pengguna dapat melihat operasi yang dilakukan sekaligus hasilnya
 
 ## 3. Screenshot Sebelum Modifikasi
 
-!(1.kodew awal.png)
-!(2.output awal berhasil.png)
+![1.kodew awal.png](screenshot/1.kodew awal.png)
+![2.output awal berhasil.png](screenshot/2.output awal berhasil.png)
 
 ---
 
 ## 4. Screenshot Sesudah Modifikasi
 
-!(3.modifikasi 1.png)
-!(4.hasil modifikasi 1.png)
-!(5.modifikasi 2.png)
-!(6.hasil modifikasi 21.png)
+![3.modifikasi 1.png](screenshot/3.modifikasi 1.png)
+![4.hasil modifikasi 1](screenshot/4.hasil modifikasi 1.png)
+![5.modifikasi 2](screenshot/5.modifikasi 2.png)
+![6.hasil modifikasi 2](screenshot/6.hasil modifikasi 2.png)
 
 ---
 
