@@ -48,9 +48,9 @@ $dataAwal = [
 
 foreach ($dataAwal as $namaTabel => $query) {
     if (mysqli_query($koneksi, $query)) {
-        echo "[INSERT] Data $namaTabel berhasil dimasukkan.\n";
+        echo "Data $namaTabel berhasil dimasukkan.\n";
     } else {
-        echo "[ERROR] Gagal memasukkan data $namaTabel: " . mysqli_error($koneksi) . "\n";
+        echo " Gagal memasukkan data $namaTabel: " . mysqli_error($koneksi) . "\n";
     }
 }
 echo "\n";
