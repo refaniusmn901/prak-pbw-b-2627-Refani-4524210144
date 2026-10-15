@@ -1,7 +1,7 @@
 <?php
 require_once 'koneksi.php';
 
-myssqli_select_db($koneksi, 'akademik');
+mysqli_select_db($koneksi, 'akademik');
 
 echo "=== 1. PROSES UPDATE DATA ===\n";
 $sqlUpdate = "UPDATE mahasiswa SET ipk = 3.40 WHERE nim = '2021002'";
