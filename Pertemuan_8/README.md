@@ -1,68 +1,51 @@
-# CodeIgniter 4 Application Starter
+# Tugas 8 - CodeIgniter 4
 
-## What is CodeIgniter?
+Modul CRUD data mahasiswa sederhana menggunakan CodeIgniter 4, lengkap dengan
+validasi input memakai *validation rules* CI4. Pesan kesalahan ditampilkan di view.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Fitur
+- Daftar data mahasiswa
+- Tambah, ubah, dan hapus data
+- Validasi input (NIM, nama, email, prodi, angkatan, IPK) dengan pesan error di form
+- Pesan sukses setelah tambah, ubah, atau hapus data
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Aturan Validasi
+| Field    | Aturan                                                  |
+|----------|---------------------------------------------------------|
+| NIM      | wajib, angka, 8-20 digit, unik                          |
+| Nama     | wajib, 3-100 karakter                                   |
+| Email    | wajib, format email valid                               |
+| Prodi    | wajib                                                   |
+| Angkatan | wajib, angka, tepat 4 digit                             |
+| IPK      | wajib, angka antara 0 dan 4                             |
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Struktur Utama
+- `app/Controllers/MahasiswaController.php` : logika CRUD dan validasi
+- `app/Models/MahasiswaModel.php` : model tabel `mahasiswa`
+- `app/Views/mahasiswa/` : `index.php`, `create.php`, `edit.php`
+- `app/Config/Routes.php` : daftar route
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## Cara Menjalankan
+1. `composer install`
+2. Buat database `db_kampus` di phpMyAdmin, lalu buat tabel `mahasiswa`
+   (kolom: `id`, `nim`, `nama`, `email`, `prodi`, `angkatan`, `ipk`)
+3. Salin `env` menjadi `.env`, lalu sesuaikan pengaturan `database.default.*`
+4. `php spark serve`
+5. Buka http://localhost:8080/mahasiswa
 
-## Installation & updates
+## Screenshot
+### Daftar Mahasiswa
+![1](ss/1.png)
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+### Tambah Data
+![2](ss/2.png)
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+### Pesan Validasi
+![3](ss/3.png)
 
-## Setup
+### Ubah Data
+![3](ss/4.png)
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+### Hapus Data
+![5.1](ss/5.1.png)
+![5.2](ss/5.2.png)
